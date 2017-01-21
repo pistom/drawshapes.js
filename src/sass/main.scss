@@ -1,0 +1,28 @@
+@import "compass";
+@import "vendor/font-awesome/font-awesome";
+@import "vendor/bootstrap";
+@import "mixins/breakpoint";
+@import "mixins/mixins";
+@import "mixins/clearfix";
+@import "colors";
+@import "fonts";
+
+
+@import "sprites/*.png";			// Create sprites with src/images/sprites/*.png
+$sprites: sprite-map("sprites/*.png");
+$disable-magic-sprite-selectors: true; 
+
+.box {
+  overflow: hidden;
+  width:100%;
+  height:300px;
+  position: relative;
+  border: 1px solid $cl-gray;
+  margin-top:10px;
+  margin-bottom:20px;
+  span {
+    &.tHide {
+      opacity:0;
+    }
+  }
+}
