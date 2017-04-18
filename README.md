@@ -10,7 +10,7 @@ Download the `drawshapes.js` library and include it to your page:
 ```js
 document.getElementById("box").drawShapes({
         shape: "triangle",
-        qtt:50,
+        density:50,
         hideSpeed: 500,
         showSpeed: 150,
         size: {min:10,max:40},

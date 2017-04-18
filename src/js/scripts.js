@@ -2,7 +2,7 @@
 
     document.getElementById("triangles").drawShapes({
         shape: "triangle",
-        qtt:50,
+        density:50,
         hideSpeed: 500,
         showSpeed: 150,
         size: {min:10,max:40},
@@ -13,7 +13,7 @@
 
     document.getElementById("rectangles").drawShapes({
         shape: "rectangle",
-        qtt:10,
+        density:10,
         hideSpeed: 1000,
         showSpeed: 50,
         size: {min:15,max:15},
@@ -24,7 +24,7 @@
 
     document.getElementById("ovals").drawShapes({
         shape: "oval",
-        qtt:20,
+        density:20,
         hideSpeed: 1000,
         showSpeed: 50,
         size: {min:20,max:50},
