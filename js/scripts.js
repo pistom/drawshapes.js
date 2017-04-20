@@ -2453,9 +2453,13 @@ Object.prototype.drawShapes = function(config){
         this.appendChild(newShape.shape);
     }
     setInterval(replaceShape.bind(this),config.speed);
-    window.addEventListener('resize',function(){
-        shapes = initShapes(this,this.dimensions);
-        this.dimensions = getDimensions(this);
+    this.afterResizeWidth = this.dimensions[0];
+    window.addEventListener('resize',function(){ 
+        if(this.afterResizeWidth != getDimensions(this)[0]){
+            this.dimensions = getDimensions(this);
+            this.afterResizeWidth = this.dimensions[0];
+            shapes = initShapes(this,this.dimensions);
+        }
     }.bind(this),false);
 };
 (function(){
@@ -2475,7 +2479,7 @@ Object.prototype.drawShapes = function(config){
         shape: "rectangle",
         density:10,
         hideSpeed: 1000,
-        showSpeed: 50, 
+        showSpeed: 50,
         size: {min:15,max:15},
         speed:250,
         colors:["rgb(253,8,100)","rgb(138,190,43)","rgb(13,195,202)","rgb(128,128,128)"],
